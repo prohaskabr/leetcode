@@ -5,9 +5,9 @@ public class TwoSum
 
     public int[] Get(int[] numbers, int target)
     {
-        var numbersToTry = new Dictionary<int,int>();
+        var numbersToTry = new Dictionary<int,int>(numbers.Length);
         
-        for (int i = 0; i < numbers.Length; i++)
+        for (var i = 0; i < numbers.Length; i++)
         {
             var minuend = target - numbers[i];
 
@@ -17,7 +17,8 @@ public class TwoSum
             numbersToTry.TryAdd(numbers[i], i);
 
         }
-        return [0, 1];
+
+        throw new Exception("Sum not found");
     }
 
     //public int[] Get(int[] numbers, int target)
