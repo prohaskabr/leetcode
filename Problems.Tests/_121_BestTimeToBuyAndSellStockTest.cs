@@ -16,7 +16,7 @@
 ///  Output: 0
 ///  Explanation: In this case, no transactions are done and the max profit = 0.
 /// </summary>
-public class BestTimeToBuyAndSellStockTest
+public class _121_BestTimeToBuyAndSellStockTest
 {
     [Theory]
     [InlineData(0, 3, 2, 1)]

@@ -19,7 +19,7 @@ namespace Problems.Tests;
 /// Output: 23
 /// Explanation: The subarray [5, 4, -1, 7, 8] has the largest sum 23.
 /// </summary>
-public class MaximumSubArrayTest
+public class _053_MaximumSubArrayTest
 {
     [Theory]
     [InlineData(6, -2, 1, -3, 4, -1, 2, 1, -5, 4)]

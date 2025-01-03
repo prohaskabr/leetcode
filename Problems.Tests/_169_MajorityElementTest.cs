@@ -11,7 +11,7 @@
 ///  Input: nums = [2, 2, 1, 1, 1, 2, 2]
 ///  Output: 2
 ///</summary>
-public class MajorityElementTest
+public class _169_MajorityElementTest
 {
     [Theory]
     [InlineData(1, 1, 2, 1, 2, 1, 1)]
