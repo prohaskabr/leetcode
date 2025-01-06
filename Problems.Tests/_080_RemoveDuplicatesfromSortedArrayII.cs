@@ -1,4 +1,5 @@
 ﻿namespace Problems.Tests;
+
 /// <summary>
 /// Given an integer array nums sorted in non-decreasing order, remove some duplicates in-place such that each unique element appears at most twice. The relative order of the elements should be kept the same.
 /// Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums.More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result.It does not matter what you leave beyond the first k elements.
@@ -20,30 +21,11 @@
 /// </summary>
 public class _080_RemoveDuplicatesfromSortedArrayII
 {
-    [Fact]
-    public void RemoveFromArrayWithSomeNumbersDuplicated()
+    [Theory]
+    [InlineData(new[] { 1, 1, 2, 2, 3 }, new[] { 1, 1, 1, 2, 2, 3 })]
+    [InlineData(new[] { 0, 0, 1, 1, 2, 3, 3 }, new[] { 0, 0, 1, 1, 1, 1, 2, 3, 3 })]
+    public void Test(int[] expected, int[] input)
     {
-        var input = new int[] { 1, 1, 1, 2, 2, 3 };
-        var expected = new int[] { 1, 1, 2, 2, 3 };
-
-        var stu = new RemoveDuplicatesfromSortedArrayII();
-
-        var result = stu.Remove(input);
-
-        Assert.Equal(expected.Length, result);
-
-        for (int i = 0; i < expected.Length; i++)
-        {
-            Assert.Equal(expected[i], input[i]);
-        }
-    }
-
-    [Fact]
-    public void RemoveFromArrayWithMoreThanTwoDuplicateOccurrence()
-    {
-        var input = new int[] { 0, 0, 1, 1, 1, 1, 2, 3, 3 };
-        var expected = new int[] { 0, 0, 1, 1, 2, 3, 3 };
-
         var stu = new RemoveDuplicatesfromSortedArrayII();
 
         var result = stu.Remove(input);
