@@ -29,7 +29,7 @@ public class _009_PalindromeNumberTest
     
     public void Test(bool expected, int number)
     {
-        var stu = new PalindromeNumber();
+        var stu = new Palindrome();
 
         var result = stu.IsPalindrome(number);
 
