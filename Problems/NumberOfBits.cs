@@ -1,4 +1,6 @@
-﻿namespace Problems;
+﻿using System.Numerics;
+
+namespace Problems;
 public class NumberOfBits
 {
     public int HammingWeight(int n)
@@ -18,7 +20,7 @@ public class NumberOfBits
     public int[] CountBits(int n)
     {
         var result = new int[n + 1];
-        
+
         for (int i = 1; i <= n; i++)
         {
             result[i] = result[i >> 1] + i % 2;
@@ -27,23 +29,17 @@ public class NumberOfBits
         return result;
     }
 
-    /*public int[] CountBits(int n)
+    public uint ReverseBits(uint n)
     {
-        var result = new int[n+1];
-        result[0] = 0;
+        uint result = 0;
 
-        for (int i = 1; i <= n; i++) {
-            var num = i;
-            result[i] = 0;
-            while (num > 0)
-            {
-                if (num % 2 != 0)
-                    result[i] ++;
-
-                num /= 2;
-            }
+        for (int i = 0; i < 32; i++)
+        {
+            result = result << 1;
+            result = result | (n & 1);
+            n = n >> 1;
         }
 
         return result;
-    }*/
+    }
 }
