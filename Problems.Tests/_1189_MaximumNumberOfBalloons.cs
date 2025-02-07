@@ -13,7 +13,7 @@ public class _1189_MaximumNumberOfBalloons
     [InlineData(0, "xyz")]
     public void Test(int expected, string word)
     {
-        var stu = new MaxNumberOf();
+        var stu = new NumberOf();
 
         var result = stu.MaxNumberOfBalloons(word);
 

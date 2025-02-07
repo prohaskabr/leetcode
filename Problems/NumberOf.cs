@@ -1,6 +1,6 @@
 ﻿namespace Problems;
 
-public class MaxNumberOf
+public class NumberOf
 {
     public int MaxNumberOfBalloons(string text)
     {
@@ -37,6 +37,28 @@ public class MaxNumberOf
             {
                 result = qtd;
             }
+        }
+
+        return result;
+    }
+
+    public int NumIdenticalPairs(int[] nums)
+    {
+        var result = 0;
+
+        var map = new Dictionary<int, int>();
+
+        foreach (var n in nums)
+        {
+            if (map.ContainsKey(n))
+                map[n]++;
+            else
+                map.Add(n, 1);
+        }
+
+        foreach (var item in map)
+        {
+            result += (item.Value * (item.Value - 1)) / 2;
         }
 
         return result;
