@@ -1,4 +1,6 @@
-﻿namespace Problems;
+﻿using Problems.Common;
+
+namespace Problems;
 
 public class AddTwoNumbers
 {
@@ -44,10 +46,4 @@ public class AddTwoNumbers
 
         return head;
     }
-}
-
-public class ListNode(int val = 0, ListNode next = null)
-{
-    public int val = val;
-    public ListNode next = next;
 }

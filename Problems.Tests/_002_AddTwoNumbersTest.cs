@@ -1,4 +1,6 @@
-﻿namespace Problems.Tests;
+﻿using Problems.Common;
+
+namespace Problems.Tests;
 
 /// <summary>
 /// You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
@@ -21,46 +23,46 @@ public class _002_AddTwoNumbersTest
 {
     private AddTwoNumbers stu = new();
 
-[Fact]
-public void Add_243_to_564_should_be_708()
-{
-    var l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
-    var l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
-
-    var result = stu.Add(l1, l2);
-
-    AssertValue(result, 7, 0, 8);
-}
-
-[Fact]
-public void Add_0_to_0_should_be_0()
-{
-    var l1 = new ListNode(0);
-    var l2 = new ListNode(0);
-
-    var result = stu.Add(l1, l2);
-
-    AssertValue(result, 0);
-}
-
-[Fact]
-public void Add_9999999_to_9999_should_be_89990001()
-{
-    var l1 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))));
-    var l2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
-
-    var result = stu.Add(l1, l2);
-
-    AssertValue(result, 8, 9, 9, 9, 0, 0, 0, 1);
-}
-
-private void AssertValue(ListNode result, params int[] values)
-{
-    var node = result;
-    foreach (var value in values)
+    [Fact]
+    public void Add_243_to_564_should_be_708()
     {
-        Assert.Equal(value, node.val);
-        node = node.next;
+        var l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+        var l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+
+        var result = stu.Add(l1, l2);
+
+        AssertValue(result, 7, 0, 8);
     }
-}
+
+    [Fact]
+    public void Add_0_to_0_should_be_0()
+    {
+        var l1 = new ListNode(0);
+        var l2 = new ListNode(0);
+
+        var result = stu.Add(l1, l2);
+
+        AssertValue(result, 0);
+    }
+
+    [Fact]
+    public void Add_9999999_to_9999_should_be_89990001()
+    {
+        var l1 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))));
+        var l2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
+
+        var result = stu.Add(l1, l2);
+
+        AssertValue(result, 8, 9, 9, 9, 0, 0, 0, 1);
+    }
+
+    private void AssertValue(ListNode result, params int[] values)
+    {
+        var node = result;
+        foreach (var value in values)
+        {
+            Assert.Equal(value, node.val);
+            node = node.next;
+        }
+    }
 }
